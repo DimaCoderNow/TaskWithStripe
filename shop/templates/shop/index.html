@@ -1,23 +1,25 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href={% static 'shop/css/styles.css' %}>
     <title>Shop</title>
 </head>
 <body>
     <div class="container">
         <table>
             <tr>
-                <td>Наименование</td>
-                <td>Описание</td>
-                <td>Стоимость, USD</td>
+                <th>Наименование</th>
+                <th>Описание</th>
+                <th>Стоимость, USD</th>
             </tr>
             {% for item in items %}
                 <tr>
                     <td>{{ item.name }}</td>
                     <td>{{ item.description }}</td>
                     <td>{{ item.price }}</td>
-                    <td><a href="{% url 'show_item' item.id %}">Просмотреть</a></td>
+                    <td><a href="{% url 'show_item' item.id %}">Оформить</a></td>
                 </tr>
             {% endfor %}
         </table>

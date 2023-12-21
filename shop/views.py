@@ -38,8 +38,8 @@ def get_session_id(request, item_id):
                 'quantity': 1,
             }],
             mode='payment',
-            success_url=request.build_absolute_uri(''),
-            cancel_url=request.build_absolute_uri(''),
+            success_url=request.build_absolute_uri('/'),
+            cancel_url=request.build_absolute_uri('/'),
         )
 
         return JsonResponse({'session_id': session.id})
