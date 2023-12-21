@@ -44,4 +44,4 @@ def get_session_id(request, item_id):
 
         return JsonResponse({'session_id': session.id})
 
-    redirect('index')
+    return redirect('index')
